@@ -86,7 +86,7 @@ class TelegramBotSender:
         Args:
             chat_id (int): unique identifier for the target chat.
             msg_text (Optional[str]): text of the message to be sent.
-            media_info (list[dict]): list of media elements to sent. Each element of the list is a InputMediaPhoto or InputMediaVideo dict (https://core.telegram.org/bots/api#inputmediaphoto).
+            media_info (list[dict]): list of media elements to sent. Each element of the list is a InputMedia dict (https://core.telegram.org/bots/api#inputmedia).
             msg_entities (Optional[list[dict]], optional): list of entities of the message. Each element of the list is a MessageEntity dict (https://core.telegram.org/bots/api#messageentity). Defaults to None.
             timeout (int, optional): time in seconds to wait. Defaults to 10.
 
