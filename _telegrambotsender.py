@@ -27,7 +27,7 @@ class TelegramBotSender:
         self,
         bot_token: str
     ) -> None:
-        """Initialize and instace of the class
+        """Initialize and instance of the class
 
         Args:
             bot_token (str): token of the bot to use to send the messages
