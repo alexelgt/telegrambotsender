@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from typing import Optional
+from typing import Optional, Tuple
 
 import json
 import requests
@@ -38,15 +38,15 @@ class TelegramBotSender:
         self,
         chat_id: int,
         msg_text: Optional[str],
-        msg_entities: Optional[list[dict]] = None,
+        msg_entities: Optional[Tuple[dict]] = None,
         timeout: int = 10
     ) -> Optional[dict]:
         """""Send a text message to a Telegram chat
 
         Args:
             chat_id (int): unique identifier for the target chat
-            msg_text (Optional[str]): text of the message to be sent
-            msg_entities (Optional[list[dict]], optional): list of entities of the message. Each element of the list is a MessageEntity dict (https://core.telegram.org/bots/api#messageentity). Defaults to None
+            msg_text (str, optional): text of the message to be sent
+            msg_entities (Tuple[dict], optional): list of entities of the message. Each element of the list is a MessageEntity dict (https://core.telegram.org/bots/api#messageentity). Defaults to None
             timeout (int, optional): time in seconds to wait. Defaults to 10
 
         Returns:
@@ -77,17 +77,17 @@ class TelegramBotSender:
         self,
         chat_id: int,
         msg_text: Optional[str],
-        media_info: list[dict],
-        msg_entities: Optional[list[dict]] = None,
+        media_info: Tuple[dict],
+        msg_entities: Optional[Tuple[dict]] = None,
         timeout: int = 10
     ) -> Optional[dict]:
         """Send a media group message to a Telegram chat
 
         Args:
             chat_id (int): unique identifier for the target chat
-            msg_text (Optional[str]): text of the message to be sent
-            media_info (list[dict]): list of media elements to sent. Each element of the list is a InputMedia dict (https://core.telegram.org/bots/api#inputmedia).
-            msg_entities (Optional[list[dict]], optional): list of entities of the message. Each element of the list is a MessageEntity dict (https://core.telegram.org/bots/api#messageentity). Defaults to None
+            msg_text (str, optional): text of the message to be sent
+            media_info (Tuple[dict]): list of media elements to sent. Each element of the list is a InputMedia dict (https://core.telegram.org/bots/api#inputmedia).
+            msg_entities (Tuple[dict], optional): list of entities of the message. Each element of the list is a MessageEntity dict (https://core.telegram.org/bots/api#messageentity). Defaults to None
             timeout (int, optional): time in seconds to wait. Defaults to 10
 
         Returns:
