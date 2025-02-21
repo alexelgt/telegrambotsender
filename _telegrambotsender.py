@@ -107,8 +107,6 @@ class TelegramBotSender:
                     timeout=timeout
                 ).json()
 
-                print(message_sent)
-
                 return message_sent["result"]
             return
         except:
